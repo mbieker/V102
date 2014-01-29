@@ -4,6 +4,8 @@
 \usepackage{a4wide}
 \usepackage{amsthm}
 \usepackage{amsbsy}
+\usepackage[separate-uncertainty=true]{siunitx}
+\usepackage{booktabs}
 \usepackage{amssymb}
 \usepackage{inputenc}
 \usepackage{rotating} 
@@ -14,12 +16,13 @@
 adieresis={ä},
 germandbls={ß},
 }
+
 \title{\textbf{Versuch V102: Drehschwingungen}}
 \author{Martin Bieker\\
 		Julian Surmann\\
 		\\
 		Durchgef\"{u}hrt am 23.01.2013\\
-		Tu Dortmund}
+		TU Dortmund}
 \date{}
 \usepackage{graphicx}
 \begin{document}
@@ -75,10 +78,10 @@ Die Richtgröße D des Zylinders ist mit
 \label{6}
 D=\frac{\pi  R^4 G}{2L}
 \end{equation}
-gegeben. Das Trägheitsmoment einer Kugel ist
+gegeben. Das Trägheitsmoment einer Kugel (mit Aufhängung) ist
 \begin{equation}
 \label{7}
-\theta=\frac{2R_k^2m_k}{5}.
+\theta=\frac{2R_k^2m_k}{5}+\theta_K.
 \end{equation}
 Aus diesen Gleichungen bildet sich also das Torsionsmodul mit
 \begin{equation}
@@ -114,12 +117,24 @@ Nachdem die Schaltung aufgebaut ist und die Messapparatur genügend ausgerichtet
 Die Durchführung zur Messung des magnetischen Moments ist ähnlich zu 4.1, allerdings wird jetzt der Magnet in der Metallkugel waagerecht ausgerichtet und mit Hilfe einer um die Kugel aufgebauten Helmholzspulen-Paar ein Magnetfeld erzeugt. Auch hier werden mit Hilfe der Schaltung mehrere Werte für die Schwingungsdauer aufgezeichnet.
 \section{Auswertung}
 
-\begin{figure}[h!]
-\centering
-%\includegraphics[scale=0.7]{Abb/abb2.png}
-\caption{Halblogarithmische Darstellung von Abb \ref{abb1}}
-\label{abb2}
-\end{figure}
+\subsection{Bestimmung des Schubmoduls}
+Zur Bestimmung des Schubmoduls G mit Formel \ref{8} berechnen. Der hierfür benötigte Radius und die Masse der Kugel, sowie das Trägheitsmoment der Kugelhalterung wurden am Versuchsaufbau abgelesen und so auf
+\begin{itemize}
+\item $m_K = \SI{0,5122+-0,0002}{\kilo\gram}$
+\item $R_K = \frac{1}{2} \SI{50,76+-0.0035532e-3}{\metre}$
+\end{itemize}
+bestimmt. Die gemessenen Werte für die Periodendauer befinden sich in Tabelle 1. Hieraus werden Mittelwert und Standardabweichung bestimmt:
+\[
+\overline{T} = \SI{18+-1}{\second}
+\]
+Aus diesen Werten ergibt sich für das Schubmodul ein Wert von
+\[
+G = \SI{}{\newton\per\meter\squared}.
+\]
+
+\subsection{Bestimmung des magnetischen Moments}
+
+\subsection{Bestimmung der Stärke des Erdmagnetfelds}
 
 \section{Diskussion}
 
