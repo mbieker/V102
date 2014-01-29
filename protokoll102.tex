@@ -49,10 +49,69 @@ In diesem Versuch wird das elastische Verhalten von isotropen Körpern betrachte
 \begin{itemize}
 \item Torsionsmodul G: Beschreibt die Gestaltselastizität.
 \item Kompressionsmodul Q: Beschreibt die Volumenelastizität.
+\item Elastizitätsmodul E: Beschreibt die relative Längenänderung des Körpers in Richtung der angreifenden Normalspannung.
+\item Poissonsche Querkontraktionszahl $\mu$: Beschreibt die relative Längenänderung des Körpers senkrecht zu der angreifenden Normalspannung.
 \end{itemize}
+Zwischen ihnen gilt folgender Zusammenhang:
+\begin{equation}
+E = 2G(\mu+1)=3Q(1-2\mu)
+\label{3}
+\end{equation}
+\subsection{Torsionsmodul}
+Das Schubmodul G beschreibt die Gestaltelastizität eines Körpers. Wenn nur Tangentialspannungen angreifen, treten Gestaltsänderungen auf. Um eine Scherung handelt es sich, wenn die parallelen Ebenen ihre Form beibehalten und um einen bestimmten Betrag verschoben werden. Dieser Betrag wächst proportional mit dem Abstand zur Grundfläche. Dies ist in Abbildung \ref{?} zu erkennen.
+Es gilt
+\begin{equation}
+\label{4}
+G = \frac{\tau}{\alpha}.
+\end{equation}
+Zur Bestimmung des Torsionsmoduls G wird hier die dynamische Methode verwendet. Dazu wird ein Metalldraht, an dem unten eine Kugel mit einem Trägheitsmoment $\theta$ befestigt ist. Das obere Ende des Drahtes ist fest eingespannt. Dieses System führt nach einer Auslenkung Drehschwingungen aus. Die Schwingungen sind ungedämpft, da an der Kugel zwei entgegengesetzte Drehmomente angreifen.
+Dann gilt für die Schwingungsdauer T
+\begin{equation}
+\label{5}
+T=2\pi \sqrt{\frac{\theta}{D}}.
+\end{equation}
+Die Richtgröße D des Zylinders ist mit
+\begin{equation}
+\label{6}
+D=\frac{\pi  R^4 G}{2L}
+\end{equation}
+gegeben. Das Trägheitsmoment einer Kugel ist
+\begin{equation}
+\label{7}
+\theta=\frac{2R_k^2m_k}{5}.
+\end{equation}
+Aus diesen Gleichungen bildet sich also das Torsionsmodul mit
+\begin{equation}
+\label{8}
+G=\frac{16\pi R_k^2m_kL}{5T^2R^4}.
+\end{equation}
+\subsection{Magnetisches Moment}
+Das magnetische Moment
+\begin{equation}
+\label{9}
+\vec{m}=p\vec{a} 
+\end{equation}
+ist ein Maß für die Stärke eines magnetischen Dipols. Wird nun ein Magnet in ein homogenes Magnetfeld mit der Flussdichte $B$ (VEKTORPFEIL ERGÄNZEN!!!) gebracht, wirkt auf ihn ein Drehmoment, dass mit
+\begin{equation}
+\label{10}
+\vec{M_{Mag}}=\vec{m} \times \vec{B} = m B sin(\gamma)
+\end{equation}
+Dabei soll $\gamma$ der Winkel zwischen den Feldlinien und der Geraden, die durch die magnetischen Pole geht, sein.
+Die Schwingungsdauer mit Magnet beträgt dann
+\begin{equation}
+\label{11}
+T_m=2\pi \sqrt{\frac{\theta}{mB+D}}.
+\end{equation}
+\section{Aufbau}
 
-\section{Aufbau und Durchf\"{u}hrung}
-
+Die in diesem Versuch verwendete Messapparatur ist den Abbildungen ??? und ??? zu entnehmen. Ein Metalldraht (Torsionsdraht) ist mit seinem oberen Ende fest an einem Stativ befestigt. An dem Draht hängt eine Metallkugel. Am Torsionsdraht ist ein kleiner Spiegel befestigt. Das Licht einer Glühlampe wird mit einem Spalt und einer Sammellinse gebündelt und so angebracht, dass es den Spiegel bescheint. Der sich um die Hochachse drehende Spiegel beleuchtet nun bei einem spezifischen Winkel eine Photodiode, die mit einer elektrischen Schaltung eine Stoppuhr auslöst. So kann die Schwingungsdauer gemessen werden.
+\subsection{Elektrische Schaltung zur Messung der Periodendauer}
+Um die Periodendauer zu messen, wird der analoge Widerstand der Photodiode in ein digitales Signal (d.h. Hell/Dunkel) umgewandelt. Bei einem Übergang von High nach Low wird dann der Takteingang eines Flopflops geschaltet. Der Ausgang des Flipflops wird direkt in die Stoppuhr gespeist. Es ist zu beachten, dass zur Messung der Periodendauer drei Lichtsignale benötigt werden. Dies ist an Abbildung ???[die zweite] gut zu erkennen. Daher eignet sich der Takteingang der Flopflops, dieser schaltet beim ersten Lichtsignal auf Low, die Stoppuhr wird aktiviert. Beim zweiten Lichtsignal wird lediglich der Ausgang des Flipflops auf High geschaltet. Auf die Uhr hat das keinen Einfluss, da diese lediglich von Übergängen von High auf Low schaltet. Beim dritten Lichtsignal wird die Uhr dann gestoppt, genau zum Ende einer Periodendauer. Aus Gründen der Einfachheit wird die Stoppuhr manuell zurückgesetzt.
+\section{Durchführung}
+\subsection{Messung des Torsionsmodules}
+Nachdem die Schaltung aufgebaut ist und die Messapparatur genügend ausgerichtet ist (Lichtstrahl und Spiegel), wird der Torsionsdraht ausgelenkt und mehrere Werte für die Periodendauer aufgenommen.
+\subsection{Messung des magnetischen Moments}
+Die Durchführung zur Messung des magnetischen Moments ist ähnlich zu 4.1, allerdings wird jetzt der Magnet in der Metallkugel waagerecht ausgerichtet und mit Hilfe einer um die Kugel aufgebauten Helmholzspulen-Paar ein Magnetfeld erzeugt. Auch hier werden mit Hilfe der Schaltung mehrere Werte für die Schwingungsdauer aufgezeichnet.
 \section{Auswertung}
 
 \begin{figure}[h!]
