@@ -78,16 +78,17 @@ Die Richtgröße D des Zylinders ist mit
 \label{6}
 D=\frac{\pi  R^4 G}{2L}
 \end{equation}
-gegeben. Das Trägheitsmoment einer Kugel (mit Aufhängung) ist
+Aus diesen Gleichungen bildet sich also das Torsionsmodul mit
+\begin{equation}
+\label{8}
+G=\frac{8\pi\theta L}{R^4T^2}.
+\end{equation}
+gegeben. Das Trägheitsmoment einer Kugel (mit Aufhängung) beträgt
 \begin{equation}
 \label{7}
 \theta=\frac{2R_k^2m_k}{5}+\theta_K.
 \end{equation}
-Aus diesen Gleichungen bildet sich also das Torsionsmodul mit
-\begin{equation}
-\label{8}
-G=\frac{16\pi R_k^2m_kL}{5T^2R^4}.
-\end{equation}
+
 \subsection{Magnetisches Moment}
 Das magnetische Moment
 \begin{equation}
@@ -105,6 +106,11 @@ Die Schwingungsdauer mit Magnet beträgt dann
 \label{11}
 T_m=2\pi \sqrt{\frac{\theta}{mB+D}}.
 \end{equation}
+Für den Betrag des magnetischen Feldes innerhalb eines Helmholzspulenpaar gilt der folgende Zusammenhang:
+\begin{equation}
+B = \mu_0 \frac{8\,I}{\sqrt{125}\,R} 
+\label{helm}
+\end{equation}
 \section{Aufbau}
 
 Die in diesem Versuch verwendete Messapparatur ist den Abbildungen ??? und ??? zu entnehmen. Ein Metalldraht (Torsionsdraht) ist mit seinem oberen Ende fest an einem Stativ befestigt. An dem Draht hängt eine Metallkugel. Am Torsionsdraht ist ein kleiner Spiegel befestigt. Das Licht einer Glühlampe wird mit einem Spalt und einer Sammellinse gebündelt und so angebracht, dass es den Spiegel bescheint. Der sich um die Hochachse drehende Spiegel beleuchtet nun bei einem spezifischen Winkel eine Photodiode, die mit einer elektrischen Schaltung eine Stoppuhr auslöst. So kann die Schwingungsdauer gemessen werden.
@@ -118,24 +124,59 @@ Die Durchführung zur Messung des magnetischen Moments ist ähnlich zu 4.1, alle
 \section{Auswertung}
 
 \subsection{Bestimmung des Schubmoduls}
-Zur Bestimmung des Schubmoduls G mit Formel \ref{8} berechnen. Der hierfür benötigte Radius und die Masse der Kugel, sowie das Trägheitsmoment der Kugelhalterung wurden am Versuchsaufbau abgelesen und so auf
+Zunächst muss das Trägheitsmoment der Kugel bestimmt werden. Der hierfür benötigte Radius und die Masse der Kugel, sowie das Trägheitsmoment der Kugelhalterung wurden am Versuchsaufbau abgelesen und so auf
 \begin{itemize}
 \item $m_K = \SI{0,5122+-0,0002}{\kilo\gram}$
-\item $R_K = \frac{1}{2} \SI{50,76+-0.0035532e-3}{\metre}$
+\item $R_K =\SI{0.0253800+-0.0000018}{\metre}$
+\item $\theta_K = \SI{22.5e-7}{\kilo\gram\meter\squared}$
 \end{itemize}
-bestimmt. Die gemessenen Werte für die Periodendauer befinden sich in Tabelle 1. Hieraus werden Mittelwert und Standardabweichung bestimmt:
+bestimmt. Hieraus kann das Gesamträgheitsmoment der Kugel mit Aufhängung nach Formel 8 berechnet werden. Es ergibt sich ein Wert von
 \[
-\overline{T} = \SI{18+-1}{\second}
+\theta = \SI{0.00013422+-0.00000005}{\kilo\gram\meter\squared}
+\]
+Die gemessenen Werte für die Periodendauer befinden sich in Tabelle 1. Hieraus werden Mittelwert und Standardabweichung bestimmt:
+\[
+\overline{T} = \SI{18.4600+-0.0021}{\second}
 \]
 Aus diesen Werten ergibt sich für das Schubmodul ein Wert von
 \[
-G = \SI{}{\newton\per\meter\squared}.
+G = \SI{9.5+-2.1e+10}{\newton\per\meter\squared}.
 \]
 
 \subsection{Bestimmung des magnetischen Moments}
 
+Zur Bestimmung des magnetischen Moments eines Permamagneten im Innern der Kugel, wurde die Schwingungsdauer der Aperatur einem externen Magnetfeld gemessen. Die Mittelwerte von $T$ in Abhängigkeit von Strom $I$ in der Felderzeugenden Spule sind in Tabelle 2 dargestellt. Die Stärke des durch ein Helmholzspulenpaar erzeugten Magnetfeldes ist durch Formel 12 gegeben. Trägt man den Kehrwert des gemessenen Periodendauer zum Quadrat gegen das Magnetfeld auf, ergibt sich wegen Formel 11
+\begin{equation}
+\frac1{T^2}= \frac{m}{4\pi^2\theta}\cdot B + \frac{D}{4\pi^2\theta} 
+\end{equation}
+ein linearer Zusammenhang (siehe Abb. \ref{ausw}).
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{Abb4.png}
+\caption{$\frac1{T^2}$ in Abhängigkeit von der magnetischen Feldstärke}
+\label{ausw}
+\end{figure}
+ Eine lineare Ausgleichsrechnung ergibt für die Steigung der Geraden 
+\[
+\frac{m}{4\pi^2\theta} = \num{9.56+-0.12}\,.
+\]
+Hieraus folgt für das magnetische Moment:
+\[
+m = \SI{0.0506+-0.0006}{\ampere\meter\squared}.
+\]
 \subsection{Bestimmung der Stärke des Erdmagnetfelds}
-
+Um die Stärke des Erdmagnefeldes zu bestimmen, wird der Permamagnet in der Kugel parallel zu diesem, d.h. senkrecht zur Drehachse, ausgerichtet. Der Mittelwert der gemessenen Schwinungsdauer beträgt
+\[
+\overline{T^*} = \SI{18.887+-0.032}{\second}\,.
+\]
+Stellt man Formel 11 nach $B$ um
+\begin{equation}
+B = \frac{\frac{\theta}{4\pi^2T^2}-D}{m}
+\end{equation}
+kann mit den bereits bestimmten Werten für $\theta$, $D$ (Formel 6) und $m$ der Betrag das Erdmagnetfeldes berechnet werden. Dieser beträgt
+\[
+B_{Erde} = \SI{0.000303+-0.000004}{\tesla}\,.
+\]
 \section{Diskussion}
 
 \section{Literatur- und Abbildungsverzeichnis}
@@ -153,30 +194,34 @@ G = \SI{}{\newton\per\meter\squared}.
 \newpage
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|lllllll|}
 \hline
-$\frac{t}{ms}$ & $\frac{U_C}{V}$ & $ln(\frac{U_C}{V})$ \\
-\hline
-0.0046 & 18.6 & 2.923\\
-0.0354 & 15.6 & 2.747\\
-0.0642 & 13.2 & 2.58\\
-0.0938 & 11.2 & 2.416\\
-0.1234 & 9.4 & 2.241\\
-0.1516 & 7.8 & 2.054\\
-0.1812 & 6.6 & 1.887\\
-0.211 & 5.6 & 1.723\\
-0.2404 & 4.6 & 1.526\\
-0.2704 & 4.0 & 1.386\\
-0.3004 & 3.4 & 1.224\\
-0.329 & 2.8 & 1.03\\
-0.3578 & 2.2 & 0.788\\
-0.3874 & 2.0 & 0.693\\
-0.4184 & 1.8 & 0.588\\
-0.4478 & 1.4 & 0.336\\
+&18.474&18.471&18.473&18.473&18.463&18.466&18.466\\
+$\frac{T}{\si{\second}}$ &18.462 & 18.469& 18.460&  18.460 & 18.454&18.459&18.453\\&18.457&18.435&18.457&18.453&18.457&18.447&18.450\\
 \hline
 \end{tabular}
-\label{mtab1}
-\caption{Lokale Maxima des Spannungsverlaufs}
-\end{table}
 
+\caption{Periodendauer $T$ bei der Messung ohne magnetische Einflüsse}
+\end{table}
+\begin{table}
+\centering
+\begin{tabular}{lll}
+\toprule
+{$\frac{I}{\si{\ampere}}$} &{ $\frac{B}{\si{\tesla}}$} &{ $\frac{T}{\si{\second}}$ }\\
+\midrule
+0.1 & 0.00045 & $10.3840 \pm 0.0060$ \\
+0.2 & 0.000899 & $8.6870 \pm 0.0060$ \\
+0.3 & 0.001349 & $7.3580 \pm 0.0040$ \\
+0.4 & 0.001798 & $6.6682 \pm 0.0021$ \\
+0.5 & 0.002248 & $6.1200 \pm 0.0019$ \\
+0.6 & 0.002698 & $5.6454 \pm 0.0023$ \\
+0.7 & 0.003147 & $5.2630 \pm 0.0070$ \\
+0.8 & 0.003597 & $5.0860 \pm 0.0060$ \\
+0.9 & 0.004046 & $4.7800 \pm 0.0040$ \\
+1.0 & 0.004496 & $4.5216 \pm 0.0022$ \\
+\bottomrule
+\end{tabular}
+\label{}
+\caption{Periodendauer $T$ in Abhängigkeit von der magnetischen Feldstärke}
+\end{table}
 \end{document}
