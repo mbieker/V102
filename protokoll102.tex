@@ -7,6 +7,7 @@
 \usepackage[separate-uncertainty=true]{siunitx}
 \usepackage{booktabs}
 \usepackage{amssymb}
+\usepackage{url}
 \usepackage{inputenc}
 \usepackage{rotating} 
 \usepackage{graphicx}
@@ -19,10 +20,13 @@ germandbls={ß},
 
 \title{\textbf{Versuch V102: Drehschwingungen}}
 \author{Martin Bieker\\
+		\textit{martin.bieker@udo.edu}\\\\
 		Julian Surmann\\
-		\\
+		\textit{julian.surmann@udo.edu}\\
+		\\\\\\
 		Durchgef\"{u}hrt am 23.01.2013\\
 		TU Dortmund}
+
 \date{}
 \usepackage{graphicx}
 \begin{document}
@@ -61,7 +65,13 @@ E = 2G(\mu+1)=3Q(1-2\mu)
 \label{3}
 \end{equation}
 \subsection{Torsionsmodul}
-Das Schubmodul G beschreibt die Gestaltelastizität eines Körpers. Wenn nur Tangentialspannungen angreifen, treten Gestaltsänderungen auf. Um eine Scherung handelt es sich, wenn die parallelen Ebenen ihre Form beibehalten und um einen bestimmten Betrag verschoben werden. Dieser Betrag wächst proportional mit dem Abstand zur Grundfläche. Dies ist in Abbildung \ref{?} zu erkennen.
+Das Schubmodul G beschreibt die Gestaltelastizität eines Körpers. Wenn nur Tangentialspannungen angreifen, treten Gestaltsänderungen auf. Um eine Scherung handelt es sich, wenn die parallelen Ebenen ihre Form beibehalten und um einen bestimmten Betrag verschoben werden. Dieser Betrag wächst proportional mit dem Abstand zur Grundfläche. Dies ist in Abbildung \ref{Abb1} zu erkennen.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.7]{Abb1.png}
+\caption{Elastische Deformation eines Würfels}
+\label{Abb1}
+\end{figure}
 Es gilt
 \begin{equation}
 \label{4}
@@ -113,16 +123,41 @@ B = \mu_0 \frac{8\,I}{\sqrt{125}\,R}
 \end{equation}
 \section{Aufbau}
 
-Die in diesem Versuch verwendete Messapparatur ist den Abbildungen ??? und ??? zu entnehmen. Ein Metalldraht (Torsionsdraht) ist mit seinem oberen Ende fest an einem Stativ befestigt. An dem Draht hängt eine Metallkugel. Am Torsionsdraht ist ein kleiner Spiegel befestigt. Das Licht einer Glühlampe wird mit einem Spalt und einer Sammellinse gebündelt und so angebracht, dass es den Spiegel bescheint. Der sich um die Hochachse drehende Spiegel beleuchtet nun bei einem spezifischen Winkel eine Photodiode, die mit einer elektrischen Schaltung eine Stoppuhr auslöst. So kann die Schwingungsdauer gemessen werden.
+Die in diesem Versuch verwendete Messapparatur ist den Abbildungen \ref{Abb2} und \ref{Abb3} zu entnehmen.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.5]{Abb2.png}
+\caption{Skizze der Messapparatur}
+\label{Abb2}
+\end{figure} 
+\ref{Abb3} zu entnehmen.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.6]{Abb3.png}
+\caption{Schematische Darstellung der Periodendauermessung}
+\label{Abb3}
+\end{figure}
+Ein Metalldraht (Torsionsdraht) ist mit seinem oberen Ende fest an einem Stativ befestigt. An dem Draht hängt eine Metallkugel. Am Torsionsdraht ist ein kleiner Spiegel befestigt. Das Licht einer Glühlampe wird mit einem Spalt und einer Sammellinse gebündelt und so angebracht, dass es den Spiegel bescheint. Der sich um die Hochachse drehende Spiegel beleuchtet nun bei einem spezifischen Winkel eine Photodiode, die mit einer elektrischen Schaltung eine Stoppuhr auslöst. So kann die Schwingungsdauer gemessen werden.
 \subsection{Elektrische Schaltung zur Messung der Periodendauer}
-Um die Periodendauer zu messen, wird der analoge Widerstand der Photodiode in ein digitales Signal (d.h. Hell/Dunkel) umgewandelt. Bei einem Übergang von High nach Low wird dann der Takteingang eines Flopflops geschaltet. Der Ausgang des Flipflops wird direkt in die Stoppuhr gespeist. Es ist zu beachten, dass zur Messung der Periodendauer drei Lichtsignale benötigt werden. Dies ist an Abbildung ???[die zweite] gut zu erkennen. Daher eignet sich der Takteingang der Flopflops, dieser schaltet beim ersten Lichtsignal auf Low, die Stoppuhr wird aktiviert. Beim zweiten Lichtsignal wird lediglich der Ausgang des Flipflops auf High geschaltet. Auf die Uhr hat das keinen Einfluss, da diese lediglich von Übergängen von High auf Low schaltet. Beim dritten Lichtsignal wird die Uhr dann gestoppt, genau zum Ende einer Periodendauer. Aus Gründen der Einfachheit wird die Stoppuhr manuell zurückgesetzt.
+Um die Periodendauer zu messen, wird der analoge Widerstand der Photodiode in ein digitales Signal (d.h. Hell/Dunkel) umgewandelt. Bei einem Übergang von High nach Low wird dann der Takteingang eines Flopflops geschaltet. Der Ausgang des Flipflops wird direkt in die Stoppuhr gespeist. Es ist zu beachten, dass zur Messung der Periodendauer drei Lichtsignale benötigt werden. Dies ist an Abbildung \ref{Abb3} gut zu erkennen. Daher eignet sich der Takteingang der Flopflops, dieser schaltet beim ersten Lichtsignal auf Low, die Stoppuhr wird aktiviert. Beim zweiten Lichtsignal wird lediglich der Ausgang des Flipflops auf High geschaltet. Auf die Uhr hat das keinen Einfluss, da diese lediglich von Übergängen von High auf Low schaltet. Beim dritten Lichtsignal wird die Uhr dann gestoppt, genau zum Ende einer Periodendauer. Aus Gründen der Einfachheit wird die Stoppuhr manuell zurückgesetzt.
 \section{Durchführung}
 \subsection{Messung des Torsionsmodules}
 Nachdem die Schaltung aufgebaut ist und die Messapparatur genügend ausgerichtet ist (Lichtstrahl und Spiegel), wird der Torsionsdraht ausgelenkt und mehrere Werte für die Periodendauer aufgenommen.
 \subsection{Messung des magnetischen Moments}
 Die Durchführung zur Messung des magnetischen Moments ist ähnlich zu 4.1, allerdings wird jetzt der Magnet in der Metallkugel waagerecht ausgerichtet und mit Hilfe einer um die Kugel aufgebauten Helmholzspulen-Paar ein Magnetfeld erzeugt. Auch hier werden mit Hilfe der Schaltung mehrere Werte für die Schwingungsdauer aufgezeichnet.
 \section{Auswertung}
+Die Auswertung, einschließlich der Fehlerrechnung, wurde mit \textsc{python} durchgeführt. Die Fehlerfortpflanzung mit der Bibliothek \textsc{uncertainties}. Für die Fehlerfortpflanzung nach Gauss ergeben sich folgende Fehlerformeln:
+\[
+\Delta\theta = 
+\]
 
+\[
+\Delta G = 
+\]
+
+\[
+\Delta B_{Erde}=
+\]
 \subsection{Bestimmung des Schubmoduls}
 Zunächst muss das Trägheitsmoment der Kugel bestimmt werden. Der hierfür benötigte Radius und die Masse der Kugel, sowie das Trägheitsmoment der Kugelhalterung wurden am Versuchsaufbau abgelesen und so auf
 \begin{itemize}
@@ -130,7 +165,7 @@ Zunächst muss das Trägheitsmoment der Kugel bestimmt werden. Der hierfür ben�
 \item $R_K =\SI{0.0253800+-0.0000018}{\metre}$
 \item $\theta_K = \SI{22.5e-7}{\kilo\gram\meter\squared}$
 \end{itemize}
-bestimmt. Hieraus kann das Gesamträgheitsmoment der Kugel mit Aufhängung nach Formel 8 berechnet werden. Es ergibt sich ein Wert von
+bestimmt. Hieraus kann das Gesamtträgheitsmoment der Kugel mit Aufhängung nach Formel 8 berechnet werden. Es ergibt sich ein Wert von
 \[
 \theta = \SI{0.00013422+-0.00000005}{\kilo\gram\meter\squared}
 \]
@@ -145,7 +180,7 @@ G = \SI{9.5+-2.1e+10}{\newton\per\meter\squared}.
 
 \subsection{Bestimmung des magnetischen Moments}
 
-Zur Bestimmung des magnetischen Moments eines Permamagneten im Innern der Kugel, wurde die Schwingungsdauer der Aperatur einem externen Magnetfeld gemessen. Die Mittelwerte von $T$ in Abhängigkeit von Strom $I$ in der Felderzeugenden Spule sind in Tabelle 2 dargestellt. Die Stärke des durch ein Helmholzspulenpaar erzeugten Magnetfeldes ist durch Formel 12 gegeben. Trägt man den Kehrwert des gemessenen Periodendauer zum Quadrat gegen das Magnetfeld auf, ergibt sich wegen Formel 11
+Zur Bestimmung des magnetischen Moments eines Permamagneten im Inneren der Kugel, wurde die Schwingungsdauer der Apparatur in einem externen Magnetfeld gemessen. Die Mittelwerte von $T$ in Abhängigkeit von Strom $I$ in der felderzeugenden Spule sind in Tabelle 2 dargestellt. Die Stärke des durch ein Helmholzspulenpaar erzeugten Magnetfeldes ist durch Formel 12 gegeben. Trägt man den Kehrwert der gemessenen Periodendauer zum Quadrat gegen das Magnetfeld auf, ergibt sich aus Formel 11
 \begin{equation}
 \frac1{T^2}= \frac{m}{4\pi^2\theta}\cdot B + \frac{D}{4\pi^2\theta} 
 \end{equation}
@@ -164,7 +199,7 @@ Hieraus folgt für das magnetische Moment:
 \[
 m = \SI{0.0506+-0.0006}{\ampere\meter\squared}.
 \]
-\subsection{Bestimmung der Stärke des Erdmagnetfelds}
+\subsection{Bestimmung der Stärke des Erdmagnetfeldes}
 Um die Stärke des Erdmagnefeldes zu bestimmen, wird der Permamagnet in der Kugel parallel zu diesem, d.h. senkrecht zur Drehachse, ausgerichtet. Der Mittelwert der gemessenen Schwinungsdauer beträgt
 \[
 \overline{T^*} = \SI{18.887+-0.032}{\second}\,.
@@ -173,19 +208,27 @@ Stellt man Formel 11 nach $B$ um
 \begin{equation}
 B = \frac{\frac{\theta}{4\pi^2T^2}-D}{m}
 \end{equation}
-kann mit den bereits bestimmten Werten für $\theta$, $D$ (Formel 6) und $m$ der Betrag das Erdmagnetfeldes berechnet werden. Dieser beträgt
+kann mit den bereits bestimmten Werten für $\theta$, $D$ (Formel 6) und $m$ der Betrag des Erdmagnetfeldes berechnet werden. Dieser beträgt
 \[
 B_{Erde} = \SI{0.000303+-0.000004}{\tesla}\,.
 \]
 \section{Diskussion}
+Die Messung der Periodendauer wurde auf Grund von schwer zu dämpfenden Schwingungen des Versuchsaufbaus erschwert. Das Ergebnis der Messung von $G$ stimmt im Großen und Ganzen mit den gefundenden Literaturwerten [2] für Stahl ($\approx \SI{80}{\giga\pascal}$) überein. Die relativ große Unsicherheit dieser Messung kann durch den strarken Einfluss der Drahtdicke erklärt werden. Diese könne nur auf \SI{0,01}{\milli\metre} bestimmt werden, geht aber mit der vierten Potenz in das Ergebnis ein. 
+
+\noindent
+Der berechnete Wert für das Magnetfeld der Erde liegt circa eine Größenordnung über den typischen Werten für Mitteleuropa ($\approx \SI{48}{\micro\tesla}$). Dies liegt wahscheinlich an der fehlerhaften Ausrichtung der Kugel im Erdmagnetfeld oder an anderen Einflüssen aus dem Labor.   
 
 \section{Literatur- und Abbildungsverzeichnis}
-\begin{itemize}
-\item $[1]$: Der Praktikumsanleitung zu V354 der TU Dortmund entnommen. Download am 5.1.14 unter \newline http://129.217.224.2/HOMEPAGE/PHYSIKER/BACHELOR/AP/SKRIPT/V354.pdf
-\end{itemize}
+\begin{enumerate}[{[}1{]}]
+\item Der Praktikumsanleitung zu V354 der TU Dortmund entnommen. \\
+Download am 5.1.14 unter:
+ \newline \url{http://129.217.224.2/HOMEPAGE/PHYSIKER/BACHELOR/AP/SKRIPT/V354.pdf}
+ \item Crandall, Dahl, Lardner: \textit{An Introduction to the Mechanics of Solids.} McGraw-Hill, 1959.
+
+\end{enumerate}
 \section{Anhang}
 \begin{itemize}
-\item Tabellen und Abbildungen
+\item Tabellen
 \item Auszug aus dem Messheft.
 
 
